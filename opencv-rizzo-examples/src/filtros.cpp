@@ -34,7 +34,7 @@ vector<vector<int>> histograma(Mat i){
 	vector<vector<int>> h;
 	vector<int> t;
 
-	for( c=0; c< 3 ; c++)
+	for( int c=0; c< 3 ; c++)
 		t.push_back(0);
 
 	for( int c=0; c < 256; c++)
