@@ -1,10 +1,15 @@
 cmake_minimum_required(VERSION 2.8)
 project( opencv-rizzo-examples )
+
 find_package( OpenCV REQUIRED )
+find_package (Eigen3 3.3 REQUIRED NO_MODULE)
+
 include_directories( ${OpenCV_INCLUDE_DIRS} )
+
 add_executable( bgr2gray bgr2gray.cpp )
 add_executable( bgr2hsv bgr2hsv.cpp )
 add_executable( avg avg.cpp )
+add_executable( draw draw.cpp )
 add_executable( gray_image gray_image.cpp )
 add_executable( filtros filtros.cpp )
 add_executable( list_mouse_events list_mouse_events.cpp )
@@ -19,6 +24,7 @@ add_executable( waitkey waitkey.cpp )
 target_link_libraries( bgr2gray ${OpenCV_LIBS} )
 target_link_libraries( bgr2hsv ${OpenCV_LIBS} )
 target_link_libraries( avg ${OpenCV_LIBS} )
+target_link_libraries( draw ${OpenCV_LIBS} Eigen3::Eigen )
 target_link_libraries( filtros ${OpenCV_LIBS} )
 target_link_libraries( gray_image ${OpenCV_LIBS} )
 target_link_libraries( list_mouse_events ${OpenCV_LIBS} )
